@@ -1,10 +1,11 @@
 "use strict";
 
 angular.module('myApp', [])
-    .controller('menuController', function () {
-        this.tab = 1;
-        this.filtText = '';
-        this.dishes = [
+    .controller('MenuController', ['$scope', function ($scope) {
+        $scope.tab = 1;
+        $scope.filtText = '';
+        $scope.showButton = false;
+        $scope.dishes = [
             {
                 name: 'Uthapizza',
                 image: 'images/uthapizza.png',
@@ -43,24 +44,55 @@ angular.module('myApp', [])
             }
         ];
 
-        this.select = function (selectedTab) {
-            this.tab = selectedTab;
+        $scope.select = function (selectedTab) {
+            $scope.tab = selectedTab;
 
             if (selectedTab === 1) {
-                this.filtText = '';
+                $scope.filtText = '';
             } else if (selectedTab === 2) {
-                this.filtText = 'mains';
+                $scope.filtText = 'mains';
             } else if (selectedTab === 3) {
-                this.filtText = 'appetizer';
+                $scope.filtText = 'appetizer';
             } else if (selectedTab === 4) {
-                this.filtText = 'dessert';
+                $scope.filtText = 'dessert';
             } else {
-                this.filtText = '';
+                $scope.filtText = '';
             }
         };
 
-        this.isSelected = function (index) {
-            return (this.tab === index);
+        $scope.isSelected = function (index) {
+            return ($scope.tab === index);
         };
 
-    });
+        $scope.showBtn = function () {
+            $scope.showButton = !$scope.showButton;
+        };
+
+    }])
+
+    .controller('ContactController', ['$scope', function ($scope) {
+        $scope.feedback = {mychannel: "", firstName: "", lastName: "", agree: "", email: ""};
+        var channels = [{value: "tel", label: "Tel."}, {value: "Email", label: "Email"}];
+        $scope.channels = channels;
+        $scope.invalidChannelSelection = false;
+
+    }])
+
+    .controller('FeedbackController', ['$scope', function ($scope) {
+        $scope.sendFeedback = function () {
+
+            console.log($scope.feedback);
+            if ($scope.feedback.agree && ($scope.feedback.mychannel == "")) {
+                $scope.invalidChannelSelection = true;
+                console.log('incorrect');
+            } else {
+                console.log('make ajax call to the server');
+                $scope.invalidChannelSelection = false;
+                $scope.feedback = {
+                    mychannel: "", firstName: "", lastName: "", agree: false, email: ""
+                };
+                $scope.feedback.mychannel = "";
+                $scope.feedbackForm.$setPristine();
+            }
+        };
+    }]);
