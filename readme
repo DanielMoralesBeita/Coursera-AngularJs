@@ -18,3 +18,7 @@ npm install grunt-contrib-connect --save-dev
 bower install angular-route -S
 bower install angular-ui-router -S
 
+npm install json-server -g
+
+bower install angular-resource -S
+
