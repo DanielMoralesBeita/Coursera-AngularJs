@@ -52,13 +52,13 @@
             </ul>
             <form class="form-horizontal" name="commentForm" ng-submit="submitComment()" novalidate>
                 <div class="form-group"
-                     ng-class="{'has-error':commentFormData.author.$error.required && !commentFormData.author.$pristine}">
+                     ng-class="{ 'has-error' : commentForm.name.$error.required && !commentForm.name.$pristine }">
                     <label class="col-sm-2 control-label">Your Name</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="name" name="name"
                                placeholder="Enter your Name" ng-model="commentFormData.author" required>
-                        <span ng-show="commentFormData.author.$error.required && !commentFormData.author.$pristine"
-                              class="help-block">Your name is required.</span>
+                        <span ng-show="commentForm.name.$error.required && !commentForm.name.$pristine"
+                              class="help-block">User name is required.</span>
                     </div>
                 </div>
                 <div class="form-group">
@@ -72,20 +72,20 @@
                     </div>
                 </div>
                 <div class="form-group"
-                     ng-class="{'has-error has-feedback': commentFormData.comment.$invalid && !commentFormData.comment.$pristine}">
+                     ng-class="{ 'has-error' : commentForm.comment.$error.required && !commentForm.comment.$pristine }">
                     <label class="col-sm-2 control-label">Your Comments</label>
                     <div class="col-sm-10">
                          <textarea class="form-control" id="comment" name="comment" rows="12"
                                    ng-model="commentFormData.comment" required>
                          </textarea>
-                        <span ng-show="commentFormData.comment.$error.required && !commentFormData.comment.$pristine"
-                              class="help-block">Your comment is required.</span>
+                        <span ng-show="commentForm.comment.$error.required && !commentForm.comment.$pristine"
+                              class="help-block">Comment is required.</span>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-primary" ng-disabled="commentFormData.$invalid">
-                            Send Comment
+                        <button type="submit" ng-disabled="commentForm.$invalid" class="btn btn-primary">Submit
+                            Comment
                         </button>
                     </div>
                 </div>

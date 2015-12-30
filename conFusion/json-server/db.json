@@ -129,7 +129,7 @@
       "image": "images/elaicheesecake.png",
       "category": "dessert",
       "label": "",
-      "price": "2.99",
+      "price": 2.99,
       "description": "A delectable, semi-sweet New York Style Cheese Cake, with Graham cracker crust and spiced with Indian cardamoms",
       "comments": [
         {
@@ -161,6 +161,12 @@
           "comment": "It's your birthday, we're gonna party!",
           "author": "25 Cent",
           "date": "2011-12-02T17:57:28.556094Z"
+        },
+        {
+          "rating": 5,
+          "author": "sfg",
+          "comment": "dgh",
+          "date": "2015-12-30T17:17:15.392Z"
         }
       ]
     }
@@ -209,5 +215,58 @@
       "description": "Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. He says, Put together the cuisines from the two craziest cultures, and you get a winning hit! Amma Mia!"
     }
   ],
-  "feedback": []
+  "feedback": [
+    {
+      "mychannel": "",
+      "firstName": "asdf",
+      "lastName": "adsf",
+      "agree": false,
+      "email": "matej.murn@gmail.com",
+      "tel": {
+        "areaCode": "12",
+        "number": "231"
+      },
+      "comments": "sfaasdf sadf",
+      "id": 1
+    },
+    {
+      "mychannel": "",
+      "firstName": "asdf",
+      "lastName": "adsf",
+      "agree": false,
+      "email": "matej.murn@gmail.com",
+      "tel": {
+        "areaCode": "123",
+        "number": "21312"
+      },
+      "comments": "asdf afd\nasdf",
+      "id": 2
+    },
+    {
+      "mychannel": "",
+      "firstName": "asdf",
+      "lastName": "ADSF",
+      "agree": false,
+      "email": "matej.murn@gmail.com",
+      "tel": {
+        "areaCode": "12",
+        "number": "333"
+      },
+      "comments": 2222222222,
+      "id": 3
+    },
+    {
+      "mychannel": "Email",
+      "firstName": "ASDF",
+      "lastName": "ASF",
+      "agree": true,
+      "email": "matej.murn@gmail.com",
+      "tel": {
+        "areaCode": "21",
+        "number": "213"
+      },
+      "comments": "ASDAASDASD",
+      "id": 4
+    }
+  ]
 }
