@@ -22,3 +22,6 @@ npm install json-server -g
 
 bower install angular-resource -S
 
+Project is provided as sample code with all dependencies needed to make it working. Project was build besides Angular course, and is not ment to use it out of the box.
+Used modules are list of modules which were used in this course. It's installation depends on each developer and his dev-environment.
+
